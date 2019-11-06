@@ -36,7 +36,7 @@ canvas{
     z-index:11;
 }
 
-#camera--trigger:focus, #camera--trigger:active{
+#camera--trigger:focus, #camera--trigger:active, #rescan:focus, #rescan:active{
     outline:none;
 }
 
@@ -54,6 +54,14 @@ canvas{
     color:white;
     font-weight:400;
     background:rgb(0,101,202);
+    padding:10px 15px 5px 15px;
+    border-radius:50px;
 }
+
+.output_image
+{
+    border-radius:50px;
+}
+
 
 
