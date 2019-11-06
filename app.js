@@ -28,8 +28,8 @@ cameraTrigger.onclick = function() {
     var dataURL = cameraSensor.toDataURL();
     console.log(dataURL);
 
-    //cameraOutput.classList.add("taken");
-    cameraStart();
+    cameraOutput.classList.add("taken");
+    window.addEventListener("load", cameraStart, false);
 };
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
