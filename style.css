@@ -2,18 +2,29 @@ html, body{
     margin: 0;
     padding: 0;
     height: 100%;
-    width: 100%:
+    width: 100%;
+    overflow: hidden;
 }
 
-#camera, #camera--view, #camera--sensor, #camera--output{
+#camera, #camera--view, #camera--output{
     position: fixed;
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
-#camera--view, #camera--sensor, #camera--output{
-
+#camera--sensor
+{
+    display:none;
 }
+
+video
+{
+    z-index:10;
+}
+canvas{
+    z-index:8;
+}
+
 #camera--trigger{
     position: fixed;
     height: 100%;
@@ -22,6 +33,7 @@ html, body{
     color:transparent;
     background:rgba(0,0,0,0);
     border:none;
+    z-index:11;
 }
 
 #camera--trigger:focus, #camera--trigger:active{
@@ -32,9 +44,16 @@ html, body{
     height: 100px!important;
     width: 100px!important;
     transition: all 0.5s ease-in;
-    border: solid 3px white;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
     top: 20px;
     right: 20px;
     z-index: 2;
 }
+
+#rescan{
+    color:white;
+    font-weight:400;
+    background:rgb(0,101,202);
+}
+
+
