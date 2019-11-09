@@ -46,13 +46,13 @@ cameraTrigger.onclick = function() {
 
     $.ajax({
         type: 'POST',
-        url: 'http://35.224.223.39:1080/img',
+        url: 'https://35.224.223.39/img',
         data: fd,
         processData: false,
         contentType: false,
         dataType:"json"
     }).done(function(data) {
-          console.log(data);
+          //console.log(data);
     });
     
 
