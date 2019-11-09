@@ -6,7 +6,7 @@ html, body{
     overflow: hidden;
 }
 
-#camera, #camera--view, #camera--output{
+#camera, #camera--view{
     position: fixed;
     height: 100%;
     width: 100%;
@@ -65,7 +65,7 @@ canvas{
 
 .modal-lg
 {
-    top:65%;
+    top:45%;
 }
 
 
