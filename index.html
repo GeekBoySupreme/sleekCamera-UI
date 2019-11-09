@@ -10,6 +10,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<script src="https://cdn.rawgit.com/adriancooney/console.image/c9e6d4fd/console.image.min.js"></script>
+
 <!-- Name of your awesome camera app -->
 <title>Camera App</title> 
 <!-- Link to your main style sheet-->
@@ -26,7 +28,7 @@
                     </div>
                     <div class="modal-body" style="text-align:center;">
 
-                      <p><img src="./assets/load.gif" alt="" id="camera--output" class="output_image"></p>
+                      <p><img src="" alt="" id="camera--output" class="output_image"></p>
                       <p>&nbsp;</p>
                       <p id="ocr_text" style="text-align:left;">This is where the extracted text goes.</p>
                     </div>
@@ -51,6 +53,8 @@
         <button id="camera--trigger" data-toggle="modal" data-target="#myModal">Scan</button>
 
         </main>
+
+
 <!-- Reference to your JavaScript file -->
 <script src="app.js"></script> 
 </body>

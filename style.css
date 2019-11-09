@@ -68,4 +68,10 @@ canvas{
     top:45%;
 }
 
+#postImage
+{
+    visibility: none;
+    color:transparent;
+}
+
 

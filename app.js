@@ -38,6 +38,47 @@ cameraTrigger.onclick = function() {
 
     console.log(blobUrl);  
 
+    var fd = new FormData();
+    fd.append("image", blobUrl);
+    for (var key of fd.entries()) {
+      console.log(key[0] + ', ' + key[1]);
+  }
+
+    $.ajax({
+        type: 'POST',
+        url: 'http://35.224.223.39:1080/img',
+        data: fd,
+        processData: false,
+        contentType: false,
+        dataType:"json"
+    }).done(function(data) {
+          console.log(data);
+    });
+    
+
+    /*var form = document.getElementById("postImage");
+    var formDataToUpload = new FormData(form);
+    formDataToUpload.append("image", blobUrl);
+
+    $.ajax({
+      url:"http://35.224.223.39:1080/img",
+      data: formDataToUpload,// Add as Data the Previously create formData
+      type:"POST",
+      contentType:false,
+      processData:false,
+      cache:false,
+      dataType:"json", // Change this according to your response from the server.
+      error:function(err){
+          console.error(err);
+      },
+      success:function(data){
+          console.log(data);
+      },
+      complete:function(){
+          console.log("Request finished.");
+      }
+  });*/
+
     /*fetch(dataURL)
     .then(res => res.blob())
     .then(console.log)*/
@@ -66,6 +107,7 @@ const b64toBlob = (b64Data, contentType='', sliceSize=512) => {
     const blob = new Blob(byteArrays, {type: contentType});
     return blob;
   }
+
 
 
 // Start the video stream when the window loads
