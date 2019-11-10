@@ -21,38 +21,38 @@ function cameraStart() {
 }
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
+    const contentType = 'image/png';
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
-    cameraOutput.src = cameraSensor.toDataURL("image/png");
+    var dataURL = cameraOutput.src = cameraSensor.toDataURL(contentType);
     //console.log(cameraOutput.src);
 
-    var dataURL = cameraSensor.toDataURL();
     //console.log(dataURL);
 
-    const contentType = 'image/png';
-    const b64Data = dataURL.substring(22, (dataURL.length-1));
 
-    const blob = b64toBlob(b64Data, contentType);
-    const blobUrl = URL.createObjectURL(blob);
+    const b64Data = dataURL.substring(13 + contentType.length, (dataURL.length-1));
+    console.log(b64Data)
+//*    const blob = b64toBlob(b64Data, contentType);
+//    const blobUrl = URL.createObjectURL(blob);
 
-    console.log(blobUrl);  
+  //  console.log(blobUrl);  
 
-    var fd = new FormData();
-    fd.append("image", blobUrl);
-    for (var key of fd.entries()) {
-      console.log(key[0] + ', ' + key[1]);
-  }
+// *   var fd = new FormData();
+// *   fd.append("image",  blob, 'capture.png');
+// *   for (var key of fd.entries()) {
+// *     console.log(key[0] + ', ' + key[1]);
+// *  }
 
     $.ajax({
         type: 'POST',
-        url: 'https://35.224.223.39/img',
-        data: fd,
+        url: 'http://127.0.0.1:1080/img',
+        data: b64Data,
         processData: false,
         contentType: false,
         dataType:"json"
     }).done(function(data) {
-          //console.log(data);
+          console.log(data);
     });
     
 
