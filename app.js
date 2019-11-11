@@ -46,7 +46,7 @@ cameraTrigger.onclick = function() {
 
     $.ajax({
         type: 'POST',
-        url: 'http://127.0.0.1:1080/img',
+        url: 'https://captainpool.co:1080/img',
         data: b64Data,
         processData: false,
         contentType: false,
