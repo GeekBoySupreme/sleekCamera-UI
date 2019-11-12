@@ -21,6 +21,9 @@ function cameraStart() {
 }
 // Take a picture when cameraTrigger is tapped
 cameraTrigger.onclick = function() {
+    document.getElementById('ocr_text').innerHTML="Extracting Text..."; //Changing View Panel Message
+
+    //Capturing image and preparing payload
     const contentType = 'image/png';
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
@@ -54,6 +57,10 @@ cameraTrigger.onclick = function() {
     }).done(function(data) {
           console.log("Data Sent.");
           console.log(data);
+          if(data.text!="")
+          document.getElementById('ocr_text').innerHTML=(data.text).toUpperCase();
+          else
+          document.getElementById('ocr_text').innerHTML="Error Extracting Text :(";
     });
     
 
