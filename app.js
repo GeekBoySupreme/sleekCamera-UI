@@ -61,7 +61,9 @@ cameraTrigger.onclick = function() {
           document.getElementById('ocr_text').innerHTML=(data.text).toUpperCase();
           else
           document.getElementById('ocr_text').innerHTML="Error Extracting Text :(";
-    });
+    })
+    .fail(function() {
+        document.getElementById('ocr_text').innerHTML="Aw Snap! Could not reach Server. Please try again! :(";});
     
 
     /*var form = document.getElementById("postImage");

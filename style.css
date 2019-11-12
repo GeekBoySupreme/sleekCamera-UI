@@ -74,4 +74,7 @@ canvas{
     color:transparent;
 }
 
-
+#ocr_text
+{
+    font-size:18px;
+}
