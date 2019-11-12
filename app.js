@@ -32,7 +32,7 @@ cameraTrigger.onclick = function() {
 
 
     const b64Data = dataURL.substring(13 + contentType.length, (dataURL.length-1));
-    console.log(b64Data)
+    //console.log(b64Data)
 //*    const blob = b64toBlob(b64Data, contentType);
 //    const blobUrl = URL.createObjectURL(blob);
 
@@ -52,6 +52,7 @@ cameraTrigger.onclick = function() {
         contentType: false,
         dataType:"json"
     }).done(function(data) {
+          console.log("Data Sent.");
           console.log(data);
     });
     
