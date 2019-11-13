@@ -12,6 +12,7 @@ html, body{
     width: 100%;
     object-fit: cover;
 }
+
 #camera--sensor
 {
     display:none;
@@ -24,6 +25,7 @@ video
 canvas{
     z-index:8;
 }
+
 
 #camera--trigger{
     position: fixed;
@@ -54,7 +56,7 @@ canvas{
     color:white;
     font-weight:400;
     background:rgb(0,101,202);
-    padding:10px 15px 5px 15px;
+    padding:10px 20px 5px 20px;
     border-radius:50px;
 }
 
@@ -78,3 +80,11 @@ canvas{
 {
     font-size:18px;
 }
+
+.btn_rescan
+{
+    vertical-align:middle;
+    position:relative;
+    margin-top:3px;
+}
+

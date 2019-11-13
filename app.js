@@ -58,7 +58,7 @@ cameraTrigger.onclick = function() {
           console.log("Data Sent.");
           console.log(data);
           if(data.text!="")
-          document.getElementById('ocr_text').innerHTML=(data.text).toUpperCase();
+          document.getElementById('ocr_text').innerHTML=(data.text);
           else
           document.getElementById('ocr_text').innerHTML="Error Extracting Text :(";
     })
