@@ -60,7 +60,7 @@ cameraTrigger.onclick = function() {
           if(data.text!="")
           document.getElementById('ocr_text').innerHTML=(data.text);
           else
-          document.getElementById('ocr_text').innerHTML="Error Extracting Text :(";
+          document.getElementById('ocr_text').innerHTML="Error Extracting Text. Please try again :(";
     })
     .fail(function() {
         document.getElementById('ocr_text').innerHTML="Aw Snap! Could not reach Server. Please try again! :(";});
